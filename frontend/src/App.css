@@ -1,0 +1,106 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.buttonInAddArticle {
+  border: none;
+  font-size: 14px;
+  padding: 1em 2em;
+  position: relative;
+  color: #0f8dad;
+  background: #f1f1f1;
+  display: grid;
+  font-weight: 700;
+  place-items: center;
+  transition: color 350ms linear 650ms;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.buttonInAddArticle:hover {
+  color: #fca311;
+}
+
+.buttonInAddArticle::before,
+.buttonInAddArticle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 0;
+  height: 6%;
+}
+
+.buttonInAddArticle::before {
+  background: #fca311;
+  transition: width 350ms, height 350ms linear 650ms;
+}
+
+.buttonInAddArticle:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.buttonInAddArticle:after {
+  background: rgb(17, 24, 39);
+  transition: width 350ms linear 175ms, height 350ms linear 650ms;
+}
+
+.buttonInAddArticle:hover::after {
+  width: 95%;
+  height: 100%;
+}
+
+/* style hero section */
+@keyframes star-fall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.animate-star {
+  animation: star-fall 6s linear infinite;
+  left: calc(50% - 1px);
+  opacity: 0.8;
+  transform: translateY(-100%);
+}
